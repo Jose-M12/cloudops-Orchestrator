@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudops-api
+  namespace: cloudops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudops-api
+  template:
+    metadata:
+      labels:
+        app: cloudops-api
+    spec:
+      containers:
+      - name: cloudops-api
+        image: cloudops-orchestrator:latest
+        ports:
+        - containerPort: 8080

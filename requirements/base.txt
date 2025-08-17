@@ -1,0 +1,16 @@
+fastapi
+pydantic
+pydantic-settings
+SQLAlchemy
+asyncpg
+redis
+celery
+python-jose[cryptography]
+passlib[bcrypt]
+slowapi
+loguru
+python-multipart
+uvicorn
+gunicorn
+orjson
+uvloop

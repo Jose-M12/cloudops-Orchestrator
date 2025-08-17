@@ -1,0 +1,8 @@
+-r prod.txt
+pytest
+pytest-asyncio
+httpx
+black
+ruff
+mypy
+pre-commit

@@ -1,0 +1,16 @@
+groups:
+  - name: api
+    rules:
+      - alert: APIServerHighErrorRate
+        expr: sum(rate(http_requests_total{job="cloudops-api",status=~"5.."}[5m])) / sum(rate(http_requests_total{job="cloudops-api"}[5m])) > 0.05
+        for: 10m
+        labels: { severity: page }
+        annotations:
+          summary: "High 5xx rate on API"
+          runbook_url: <https://docs.example.com/runbooks/api-5xx>
+      - alert: WorkerQueueBacklog
+        expr: increase(cloudops_tasks_enqueued_total[10m]) - increase(cloudops_tasks_completed_total[10m]) > 100
+        for: 15m
+        labels: { severity: warn }
+        annotations:
+          summary: "Task backlog increasing"

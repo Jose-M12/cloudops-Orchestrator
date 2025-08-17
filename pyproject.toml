@@ -1,0 +1,23 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+select = ["E","F","W","I","UP","B","C90"]
+ignore = ["E501"]
+target-version = "py311"
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+addopts = "-q --maxfail=1 --disable-warnings"
+testpaths = ["tests"]
+
+[project.entry-points."cloudops.providers"]
+aws = "app.services.cloud.aws_service:AwsProvider"
+azure = "app.services.cloud.azure_service:AzureProvider"
+gcp = "app.services.cloud.gcp_service:GcpProvider"
+openstack = "app.services.cloud.openstack_service:OpenStackProvider"

@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: application-operator
+rules:
+  - apiGroups: ["apps.cloudops.io"]
+    resources: ["applications", "applications/status", "applications/finalizers"]
+    verbs: ["get","list","watch","create","update","patch","delete"]
+  - apiGroups: [""]
+    resources: ["pods","services","events","configmaps","secrets"]
+    verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: application-operator
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: application-operator
+subjects:
+  - kind: ServiceAccount
+    name: application-operator
+    namespace: cloudops

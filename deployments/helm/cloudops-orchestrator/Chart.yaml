@@ -1,0 +1,4 @@
+apiVersion: v2
+name: cloudops-orchestrator
+description: A Helm chart for CloudOps Orchestrator
+version: 0.1.0
