@@ -1,4 +1,6 @@
-Welcome to the CloudOps Orchestrator lesson! This document will guide you through the architecture and design of a professional-grade, multi-cloud infrastructure automation platform. By the end of this lesson, you will understand not just *how* the system works, but *why* it was designed this way.
+# Welcome to the CloudOps Orchestrator lesson!
+
+This document will guide you through the architecture and design of a professional-grade, multi-cloud infrastructure automation platform. By the end of this lesson, you will understand not just *how* the system works, but *why* it was designed this way.
 
 The CloudOps Orchestrator is an enterprise-grade platform built with Python that provides a unified API for managing and orchestrating cloud resources across multiple providers like AWS, Azure, and GCP. It leverages industry-best-practices and modern technologies to deliver a robust, scalable, and maintainable system.
 
@@ -33,7 +35,7 @@ To solve this, we separate our application into two main parts:
 
 Think of a restaurant. The **Waiter** is the API server. You (the customer) give your order to the waiter. The waiter doesn't go and cook the food themselves. They write it down, put it on a ticket, and give it to the **Kitchen** (the Worker). The waiter then immediately comes back to you to see if you need anything else. The kitchen works on your order in the background, and the waiter brings you the food when it's ready.
 
-This is exactly how our system works. The API server (waiter) takes the request and puts it in a queue (the ticket). The Worker (kitchen) picks up the request from the queue and executes it.
+This is exactly how our system works. The API server (waiter) takes the request and puts it in a queue (the ticket). The Worker (kitchen) picks up the a request from the queue and executes it.
 
 ### 3. The Main Components
 
